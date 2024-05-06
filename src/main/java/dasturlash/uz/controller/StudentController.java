@@ -5,10 +5,16 @@ import dasturlash.uz.service.BookService;
 import dasturlash.uz.service.ScannerService;
 import dasturlash.uz.service.StudentBookService;
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StudentController {
+    @Autowired
     private BookService bookService;
+    @Autowired
     private StudentBookService studentBookService;
+    @Autowired
     private ScannerService scannerService;
 
     public void start() {
@@ -35,7 +41,7 @@ public class StudentController {
                     studentBookService.booksOnHand();
                     break;
                 case 6:
-                   studentBookService.takenBookHistory();
+                    studentBookService.takenBookHistory();
                     break;
                 case 0:
                     loop = false;
@@ -78,15 +84,4 @@ public class StudentController {
         studentBookService.returnBook(bId);
     }
 
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void setStudentBookService(StudentBookService studentBookService) {
-        this.studentBookService = studentBookService;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
 }

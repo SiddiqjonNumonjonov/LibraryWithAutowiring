@@ -2,13 +2,21 @@ package dasturlash.uz.controller;
 import dasturlash.uz.dto.Profile;
 import dasturlash.uz.service.*;
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MainController {
+    @Autowired
     // lesson finished
     private BookService bookService;
+    @Autowired
     private ScannerService scannerService;
+    @Autowired
     private AuthService authService;
+    @Autowired
     private CategoryService categoryService;
+    @Autowired
     private  InitService initService;
     public void start() {
         initService.initCreateFile();
@@ -104,26 +112,6 @@ public class MainController {
         System.out.print("Enter category id:");
         Integer categoryId = scannerService.getScannerForDigit().nextInt();
           bookService.byCategoryId(categoryId);
-    }
-
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
-
-    public void setAuthService(AuthService authService) {
-        this.authService = authService;
-    }
-
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public void setInitService(InitService initService) {
-        this.initService = initService;
     }
 
 }

@@ -5,11 +5,12 @@ import dasturlash.uz.repository.ProfileRepository;
 import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.util.MD5Util;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-
+@Component
 public class InitService {
 
     public void initCreateFile() {

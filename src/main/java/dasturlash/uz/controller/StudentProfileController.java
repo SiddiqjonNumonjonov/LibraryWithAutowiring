@@ -6,9 +6,14 @@ import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.service.ProfileService;
 import dasturlash.uz.service.ScannerService;
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class StudentProfileController {
+    @Autowired
     private ProfileService profileService;
+    @Autowired
     private ScannerService scannerService;
     public void start() {
         boolean loop = true;
@@ -64,13 +69,5 @@ public class StudentProfileController {
         System.out.print("Enter id: ");
         Integer id = scannerService.getScannerForDigit().nextInt();
         profileService.changeStudentStatus(id, ProfileStatus.ACTIVE);
-    }
-
-    public void setProfileService(ProfileService profileService) {
-        this.profileService = profileService;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
     }
 }

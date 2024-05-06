@@ -1,5 +1,8 @@
 package dasturlash.uz.repository;
 import dasturlash.uz.dto.Book;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,8 +15,10 @@ import java.util.List;
 import java.util.stream.Stream;
 
 
+@Component
 public class BookRepository {
     private Integer bookId = 1;
+    @Autowired
     private CategoryRepository categoryRepository;
 
 
@@ -183,9 +188,5 @@ public class BookRepository {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public void setCategoryRepository(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
     }
 }

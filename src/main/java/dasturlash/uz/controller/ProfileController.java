@@ -5,10 +5,16 @@ import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.service.ProfileService;
 import dasturlash.uz.service.ScannerService;
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ProfileController {
+    @Autowired
     private ProfileService profileService;
+    @Autowired
     private ScannerService scannerService;
+
     public void start() {
         boolean loop = true;
         while (loop) {
@@ -16,7 +22,7 @@ public class ProfileController {
             int action = ScannerUtil.getAction();
             switch (action) {
                 case 1:
-                  profileService.list();
+                    profileService.list();
                     break;
                 case 2:
                     search();
@@ -85,20 +91,12 @@ public class ProfileController {
     public void search() {
         System.out.print("Enter query: ");
         String query = scannerService.getScannerForStr().nextLine();
-         profileService.search(query, ProfileRole.ADMIN, ProfileRole.STAFF);
+        profileService.search(query, ProfileRole.ADMIN, ProfileRole.STAFF);
     }
 
     private void changeStatus() {
         System.out.print("Enter Id: ");
         Integer id = scannerService.getScannerForDigit().nextInt();
         profileService.changeStatus(id);
-    }
-
-    public void setProfileService(ProfileService profileService) {
-        this.profileService = profileService;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
     }
 }

@@ -1,17 +1,20 @@
 package dasturlash.uz.controller;
-
-import dasturlash.uz.container.ComponentContainer;
 import dasturlash.uz.dto.Book;
 import dasturlash.uz.service.BookService;
 import dasturlash.uz.service.ScannerService;
 import dasturlash.uz.service.StudentBookService;
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-
+@Component
 public class BookController {
+    @Autowired
     private ScannerService scannerService;
+    @Autowired
     private StudentBookService studentBookService;
+    @Autowired
     private BookService bookService;
 
 
@@ -113,21 +116,5 @@ public class BookController {
         System.out.print("Enter book Id:");
         Integer bookId = scannerService.getScannerForStr().nextInt();
         studentBookService.bookHistory(bookId);
-    }
-
-    public ScannerService getScannerService() {
-        return scannerService;
-    }
-
-    public void setScannerService(ScannerService scannerService) {
-        this.scannerService = scannerService;
-    }
-
-    public void setStudentBookService(StudentBookService studentBookService) {
-        this.studentBookService = studentBookService;
-    }
-
-    public void setBookService(BookService bookService) {
-        this.bookService = bookService;
     }
 }

@@ -1,6 +1,8 @@
 package dasturlash.uz.repository;
 import dasturlash.uz.dto.StudentBook;
 import dasturlash.uz.enums.StudentBookStatus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -12,9 +14,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Stream;
-
+@Component
 public class StudentBookRepository {
+    @Autowired
     private BookRepository bookRepository;
+    @Autowired
     private ProfileRepository profileRepository;
 
     private Integer serialId = 1;
@@ -232,13 +236,5 @@ public class StudentBookRepository {
                 printWriter.close();
             }
         }
-    }
-
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
-
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
     }
 }

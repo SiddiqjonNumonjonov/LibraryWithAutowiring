@@ -10,13 +10,19 @@ import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.util.MD5Util;
 import dasturlash.uz.util.ProfileValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-
+@Component
 public class AuthService {
+    @Autowired
     private ProfileRepository profileRepository;
+    @Autowired
     private StudentController studentController;
+    @Autowired
     private AdminController adminController;
+    @Autowired
     private StaffController staffController;
 
     public void login(String login, String password) {
@@ -67,21 +73,5 @@ public class AuthService {
             System.out.println("Registration completed.");
         }
 
-    }
-
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
-    }
-
-    public void setStudentController(StudentController studentController) {
-        this.studentController = studentController;
-    }
-
-    public void setAdminController(AdminController adminController) {
-        this.adminController = adminController;
-    }
-
-    public void setStaffController(StaffController staffController) {
-        this.staffController = staffController;
     }
 }

@@ -5,14 +5,20 @@ import dasturlash.uz.dto.Book;
 import dasturlash.uz.dto.Category;
 import dasturlash.uz.repository.BookRepository;
 import dasturlash.uz.repository.CategoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Component
 public class BookService {
+    @Autowired
     private CategoryService categoryService;
+    @Autowired
     private CategoryRepository categoryRepository;
+    @Autowired
     private BookRepository bookRepository;
+
     public void add(Book book) {
         categoryService.list();
         // check
@@ -87,17 +93,5 @@ public class BookService {
         bookList.forEach(book -> {
             System.out.println(book.getId() + ", " + book.getTitle() + ", " + book.getAuthor() + ", " + book.getCategory().getName());
         });
-    }
-
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public void setCategoryRepository(CategoryRepository categoryRepository) {
-        this.categoryRepository = categoryRepository;
-    }
-
-    public void setBookRepository(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
     }
 }

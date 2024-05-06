@@ -2,6 +2,7 @@ package dasturlash.uz.repository;
 
 import dasturlash.uz.dto.Book;
 import dasturlash.uz.dto.Category;
+import org.springframework.stereotype.Component;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
-
+@Component
 public class CategoryRepository {
     private Integer catId = 1;
 
@@ -137,7 +138,4 @@ public class CategoryRepository {
             throw new RuntimeException(e);
         }
     }
-
-
-
 }

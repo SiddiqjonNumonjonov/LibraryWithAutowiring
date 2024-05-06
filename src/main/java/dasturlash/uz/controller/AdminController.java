@@ -2,11 +2,19 @@ package dasturlash.uz.controller;
 
 
 import dasturlash.uz.util.ScannerUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class AdminController {
+    @Autowired
     private BookController bookController;
+    @Autowired
     private StudentProfileController studentProfileController;
+    @Autowired
     private ProfileController profileController;
+    @Autowired
     private CategoryController categoryController;
     public void start() {
         boolean loop = true;
@@ -45,21 +53,5 @@ public class AdminController {
         System.out.println("3. Student");
         System.out.println("4. Profile");
         System.out.println("0. Exit");
-    }
-
-    public void setBookController(BookController bookController) {
-        this.bookController = bookController;
-    }
-
-    public void setStudentProfileController(StudentProfileController studentProfileController) {
-        this.studentProfileController = studentProfileController;
-    }
-
-    public void setProfileController(ProfileController profileController) {
-        this.profileController = profileController;
-    }
-
-    public void setCategoryController(CategoryController categoryController) {
-        this.categoryController = categoryController;
     }
 }

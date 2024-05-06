@@ -7,12 +7,16 @@ import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.repository.ProfileRepository;
 import dasturlash.uz.util.MD5Util;
 import dasturlash.uz.util.ProfileValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
+@Component
 public class ProfileService {
+    @Autowired
     private CategoryService categoryService;
+    @Autowired
     private ProfileRepository profileRepository;
     public void addProfile(Profile profile) {
         categoryService.list();
@@ -133,13 +137,5 @@ public class ProfileService {
         } else {
             System.out.println("Status did not changed");
         }
-    }
-
-    public void setCategoryService(CategoryService categoryService) {
-        this.categoryService = categoryService;
-    }
-
-    public void setProfileRepository(ProfileRepository profileRepository) {
-        this.profileRepository = profileRepository;
     }
 }
