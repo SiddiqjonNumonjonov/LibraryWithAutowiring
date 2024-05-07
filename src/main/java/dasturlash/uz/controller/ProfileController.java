@@ -7,8 +7,9 @@ import dasturlash.uz.service.ScannerService;
 import dasturlash.uz.util.ScannerUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
-@Component
+@Controller
 public class ProfileController {
     @Autowired
     private ProfileService profileService;

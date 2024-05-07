@@ -6,6 +6,7 @@ import dasturlash.uz.dto.Profile;
 import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.enums.ProfileStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +19,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
-@Component
+@Repository
 public class ProfileRepository {
 
     private Integer profId = 1;

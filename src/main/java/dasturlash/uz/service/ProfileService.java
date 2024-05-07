@@ -9,10 +9,11 @@ import dasturlash.uz.util.MD5Util;
 import dasturlash.uz.util.ProfileValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
-@Component
+@Service
 public class ProfileService {
     @Autowired
     private CategoryService categoryService;

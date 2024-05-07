@@ -12,9 +12,10 @@ import dasturlash.uz.util.MD5Util;
 import dasturlash.uz.util.ProfileValidationUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-@Component
+@Service
 public class AuthService {
     @Autowired
     private ProfileRepository profileRepository;

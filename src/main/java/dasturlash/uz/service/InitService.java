@@ -6,11 +6,12 @@ import dasturlash.uz.enums.ProfileRole;
 import dasturlash.uz.enums.ProfileStatus;
 import dasturlash.uz.util.MD5Util;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
-@Component
+@Service
 public class InitService {
 
     public void initCreateFile() {

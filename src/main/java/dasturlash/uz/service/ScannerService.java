@@ -1,9 +1,10 @@
 package dasturlash.uz.service;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
-@Component
+@Service
 public class ScannerService {
     private Scanner scannerForStr;
     private Scanner scannerForDigit;

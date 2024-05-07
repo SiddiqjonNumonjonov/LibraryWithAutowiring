@@ -10,11 +10,12 @@ import dasturlash.uz.repository.BookRepository;
 import dasturlash.uz.repository.StudentBookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
-@Component
+@Service
 public class StudentBookService {
     @Autowired
     private BookRepository bookRepository;

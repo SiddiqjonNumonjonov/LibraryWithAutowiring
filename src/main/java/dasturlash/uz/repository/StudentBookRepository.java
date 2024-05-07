@@ -3,6 +3,7 @@ import dasturlash.uz.dto.StudentBook;
 import dasturlash.uz.enums.StudentBookStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -14,7 +15,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Stream;
-@Component
+@Repository
 public class StudentBookRepository {
     @Autowired
     private BookRepository bookRepository;
